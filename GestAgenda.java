@@ -25,7 +25,7 @@ public abstract class GestAgenda extends ChoseAFaire {
     public static void main(String arg[]) {
         try {
             BufferedReader br = new BufferedReader(new FileReader("uneChose.txt"));
-            agenda = new ChoseAFaire(br.readLine());
+            uneChose = new ChoseAFaire(br.readLine());
             System.out.println("importe : "+uneChose);
             br.close();
         } catch (Exception e) {
@@ -33,8 +33,8 @@ public abstract class GestAgenda extends ChoseAFaire {
         }
         try {
             DataInputStream dis = new DataInputStream(new FileInputStream("uneChose.bin"));
-            agenda = new ChoseAFaire();
-            ChoseAFaire.charge(dis);
+            uneChose = new ChoseAFaire();
+            uneChose.charge(dis);
             System.out.println("charge : "+uneChose);
             dis.close();
         } catch (Exception e) {
@@ -60,7 +60,7 @@ public abstract class GestAgenda extends ChoseAFaire {
         }
         try {
             PrintWriter pw = new PrintWriter(new FileWriter("uneChose.txt"));
-            pw.println(agenda);
+            pw.println(uneChose);
             pw.close();
         } catch(IOException e) {
             System.err.println(e);

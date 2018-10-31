@@ -3,18 +3,18 @@ import outils.*;
 
 public class SaveExport {
     public static void SaveExport() {
-        ChoseAFaire save;
-        save = new SaveExport("save.txt");
+        ChoseAFaire uneChose;
+        uneChose = new ChoseAFaire("save.txt");
         try {
             DataOutputStream dos = new DataOutputStream(new FileOutputStream("save.bin"));
-            save.enregistre(dos);
+            uneChose.enregistre(dos);
             dos.close();
         } catch(IOException e) {
             System.err.println(e);
         }
         try {
             PrintWriter pw = new PrintWriter(new FileWriter("save.txt"));
-            pw.println(save);
+            pw.println(uneChose);
             pw.close();
         } catch(IOException e) {
             System.err.println(e);
